@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar Countdown</title>
+    <meta name="description" content="Because every countdown is the final countdown">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- <script src="bower_components/modernizr/modernizr.js"></script> -->
+
+  </head>
+  <body>
+    <div>
+      <h1>Calendar Countdown Proof of Concept</h1>
+      <h2>1. Authenticate with Google</h2>
+      <span id="signinButton" class="disabled">
+        <span
+          class="g-signin"
+          data-callback="oauthCallback"
+          data-clientid="760355326926"
+          data-cookiepolicy="single_host_origin"
+          data-scope="https://www.googleapis.com/auth/calendar.readonly">
+        </span>
+      </span>
+
+      <button id="signoutButton" onclick="app.oauth.signOut()" class="disabled">
+        Sign Out
+      </button>
+
+    </div>
+    <div class="calendars">
+      <h2>2. Select a Calendar</h2>
+      <select></select>
+    </div>
+
+    <div class="events">
+      <h2>3. Next 3 events</h2>
+      <h3></h3>
+      <ol></ol>
+    </div>
+    
+    <div class="countdown">
+      <h2>4. Countdown to next event</h2>
+      <h3></h3>
+      <span class="days">00</span>:<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- <script src="bower_components/jquery/jquery.js"></script> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+</body>
+</html>
